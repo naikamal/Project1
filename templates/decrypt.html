@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Decrypt{% endblock %}
+
+{% block content %}
+<h2>Decrypt Your Text</h2>
+<div class="form-container">
+    <form method="post">
+        {% csrf_token %}
+        <label for="text">Enter text to decrypt:</label>
+        <input type="text" id="text" name="text" required>
+        
+        <label for="algorithm">Select Decryption Algorithm:</label>
+        <select id="algorithm" name="algorithm" required>
+            <option value="rot13">ROT13</option>
+            <option value="caesar">Caesar Cipher</option>
+            <option value="columnar">Columnar Transposition</option>
+        </select>
+        
+        <button type="submit">Decrypt</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Decrypted Text:</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

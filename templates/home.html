@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Existing content remains intact -->
+<h2>Welcome to the Encryption-Decryption Tool!</h2>
+<p>Use this tool to securely encrypt and decrypt your text using three powerful algorithms:</p>
+<ul style="text-align: left; display: inline-block;">
+    <li><strong>ROT13</strong> - A simple letter substitution cipher.</li>
+    <li><strong>Caesar Cipher</strong> - A classic shift cipher for encoding text.</li>
+    <li><strong>Columnar Transposition</strong> - A more complex algorithm for secure encoding.</li>
+</ul>
+<p>Navigate through the menu to get started!</p>
+
+<!-- New section for personal information and project details -->
+<div class="personal-info-container">
+    <h3>About Me</h3>
+    <div class="personal-info">
+        <p><strong>Name:</strong> Naik Amal Shah</p>
+        <p><strong>University:</strong> Abdul Wali Khan University</p>
+        <p><strong>Program:</strong> 7th Semester, Artificial Intelligence</p>
+        <p><strong>Assignment:</strong> Information Security</p>
+        <p><strong>Teacher:</strong> Umar Farooq</p>
+    </div>
+</div>
+
+<div class="project-description">
+    <h3>About the Project</h3>
+    <p>This project is an encryption and decryption tool developed for my Information Security assignment. It provides users the ability to secure text using different encryption algorithms. The tool is built using Django, Python, and modern front-end technologies to deliver an easy-to-use and functional interface.</p>
+</div>
+
+{% endblock %}

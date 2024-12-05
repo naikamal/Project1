@@ -1,0 +1,45 @@
+/* New styles for the added content */
+
+/* Personal info section */
+.personal-info-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.personal-info h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.personal-info {
+    display: inline-block;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.personal-info p {
+    font-size: 1.1em;
+    color: #444;
+    margin: 8px 0;
+}
+
+/* Project description section */
+.project-description {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.project-description h3 {
+    font-size: 1.8em;
+    color: #333;
+}
+
+.project-description p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 15px;
+}
