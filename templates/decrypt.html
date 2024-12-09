@@ -9,22 +9,40 @@
         {% csrf_token %}
         <label for="text">Enter text to decrypt:</label>
         <input type="text" id="text" name="text" required>
-        
+
         <label for="algorithm">Select Decryption Algorithm:</label>
-        <select id="algorithm" name="algorithm" required>
+        <select id="algorithm" name="algorithm" required onchange="toggleKeyInput()">
             <option value="rot13">ROT13</option>
             <option value="caesar">Caesar Cipher</option>
             <option value="columnar">Columnar Transposition</option>
         </select>
-        
-        <button type="submit">Decrypt</button>
-    </form>
 
-    {% if result %}
-    <div class="result">
-        <h3>Decrypted Text:</h3>
-        <p>{{ result }}</p>
-    </div>
-    {% endif %}
+        <!-- Key input field for Columnar Transposition -->
+        <div id="key-container" style="display: none;">
+            <label for="key">Enter Key:</label>
+            <input type="text" id="key" name="key">
+        </div>
+
+        <button type="submit">Decrypt</button>
+        {% if result %}
+        <div class="result">
+            <h3>Decrypted Text:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </form>
 </div>
+
+<script>
+    // Show or hide the key input field based on the selected algorithm
+    function toggleKeyInput() {
+        const algorithm = document.getElementById('algorithm').value;
+        const keyContainer = document.getElementById('key-container');
+        if (algorithm === 'columnar') {
+            keyContainer.style.display = 'block';
+        } else {
+            keyContainer.style.display = 'none';
+        }
+    }
+</script>
 {% endblock %}
